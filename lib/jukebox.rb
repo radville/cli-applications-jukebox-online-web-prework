@@ -1,4 +1,5 @@
 require 'pry'
+binding.pry
 
 def help
   puts "I accept the following commands:"
@@ -13,16 +14,18 @@ def list(songs)
     index = index + 1
     puts "#{index}. #{song}"
   end
+  
 end
 
 def play(songs)
-    binding.pry
   puts "Please enter a song name or number:"
   input = gets.chomp
   if list(songs).include?input
-    puts "Playing #{input}"
+    puts "Playing #{song}"
   else
     "Invalid input, please try again"
+        binding.pry
+
   end
 end
 
